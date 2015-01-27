@@ -1,0 +1,120 @@
+html, body {
+  height: 100%;
+}
+body {
+  padding: 50px 0 0 0;
+}
+
+.navmenu {
+  padding-top: 30px !important;
+
+  background-image: url('../images/stardust.png');
+  padding-left: 20px;
+}
+
+.navbar {
+  display: block;
+  text-align: center;
+}
+.navbar-brand {
+  display: inline-block;
+  float: none;
+}
+.navbar-toggle {
+  position: absolute;
+  float: left;
+  margin-left: 15px;
+}
+
+.container {
+  max-width: 100%;
+  float: left;
+}
+
+@media (min-width: 1px) {
+  .navbar-toggle {
+    display: block !important;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    padding: 0 0 0 340px;
+  }
+  .navmenu {
+    padding-top: 0;
+  }
+  .navbar {
+    display: none !important; /* IE8 fix */
+  }
+}
+
+@media (max-width: 991px) {
+  .navmenu,
+  .navbar-offcanvas {
+    width: 30%;
+    height: 80%;
+  }
+}
+
+@media (max-width: 767px) {
+  .navmenu,
+  .navbar-offcanvas {
+    width: 40%;
+    height: 80%
+  }
+}
+
+.page-header {
+  margin-bottom: 40px;
+  font-family: monospace !important;
+}
+
+/***Bootstrap custom style***/
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.nav > li > a:hover {
+  color: #8bddcd;
+}
+
+.nav > li > a {
+  font-size: 1.3em;
+  color: white;
+}
+
+.nav > li > a:focus {
+  color:#18BC9C;
+  outline: none !important;
+}
+
+.navmenu-brand {
+  font-size: 2em;
+  color: #18BC9C !important;
+  font-family: monospace;
+}
+
+#github img {
+  width: 55px;
+  height: 55px;
+
+}
+
+.icons img {
+  width: 55px;
+  width: 55px;
+  border-radius:50%;
+}
+
+.icons {
+  padding-top: 20px;
+  padding-right: 2px;
+}
+
+.icons img:hover {
+  background-color: #8bddcd !important;
+}

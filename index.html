@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+    <title>Navmenu Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/jasny-bootstrap.css" rel="stylesheet">
+    <link href="css/navmenu.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    
+    <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
+      <a class="navmenu-brand visible-md visible-lg" href="#">skamsie.ro</a>
+      <ul class="nav navmenu-tabs">
+        &nbsp;
+        <li class="active hideme"><a data-toggle="tab" href="#projects">projects</a></li>
+        <li class="hideme"><a data-toggle="tab" href="#snippets">snippets & utils</a></li>
+        <li class="hideme"><a data-toggle="tab" href="#about">about</a></li>
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Stuff <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a data-toggle="tab" href="#dropdown1">Stuff1</a></li>
+                <li><a data-toggle="tab" href="#dropdown2">Stuff2</a></li>
+            </ul>
+        </li>
+
+      <div class="container">
+      <div class="row icons"> 
+      <div class="col-sm-3"><a href="http://github.com/skamsie/"><img src="images/github-icon.png"></a></div>
+      <div class="col-sm-3"><a href="http://skamsie.tumblr.com"><img src="images/tumblr-icon.png"></a></div>
+      <div class="col-sm-3"><a href="http://www.flickr.com/photos/skamsie/"><img src="images/flickr-icon.png"></a></div>
+      </div>
+      </div>
+    </div>
+
+    <div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
+      <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><span id=site-title>skamsie.ro</span></a>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+<!--  
+      
+      <div class="button">
+      <input type="button" id="lesen" value="Lesen!" />
+      </div>
+
+
+    <div class="text">
+      Lorem Ipsum <br />
+    </div>
+-->
+    
+      <div class="page-header">
+        <h1>skamsie.ro</h1>
+        <h4>arduino &bull; python &bull; utils</h4>
+      </div>
+      
+      <div class="tab-content">
+        <div id="projects" class="tab-pane in active">
+            <h3>Projects</h3>
+            <p>Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+        </div>
+      
+      <div id="snippets" class="tab-pane">
+            <h3>Snippets</h3>
+            <p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
+      </div><!-- /#snippets-->
+      
+      <div id="about" class="tab-pane">
+            <h3>About</h3>
+            <p>I have created this website in January 2015 as an exercise to improve my web 
+              development skills. Most of the content is about python, arduino and web development.<br />
+              Some awesome frameworks and JavaScript plugins that helped me along the way:</p>
+              <ul>
+                <li><a href="http://getbootstrap.com">Bootstrap</a> (html, css, JavaScript framework for responsive mobile friendly websites)</li>
+                <li><a href="http://github.com/jasny/bootstrap">Jasny Bootstrap</a> (extension of Bootstrap adding various components)</li>
+                <li><a href="http://sparkbox.github.io/mediaCheck/">Media Check</a> (allows you to control your JavaScript based on your media query definitions)</li>
+            
+      </div><!-- /#about-->
+        
+      </div><!-- /.tab-content-->
+    </div>
+    </div>
+    </div><!-- /.container -->
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jasny-bootstrap.js"></script>
+    <script src="js/myscript.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/mediaCheck.js"></script>
+  </body>
+</html>
+
