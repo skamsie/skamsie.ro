@@ -81,8 +81,8 @@ body {
 
 /***Bootstrap custom style***/
 
-.nav > li > a:hover,
-.nav > li > a:focus {
+.navmenu-tabs > li > a:hover,
+.navmenu-tabs > li > a:focus {
   text-decoration: none;
   background-color: transparent;
 }
@@ -96,16 +96,11 @@ body {
   color: white;
 }
 
-.nav > li > a:focus {
+.navmenu-tabs > li > a:focus {
   color:#18BC9C;
   outline: none !important;
 }
 
-#github img {
-  width: 55px;
-  height: 55px;
-
-}
 
 .icons img {
   width: 55px;
@@ -142,11 +137,35 @@ body {
   color: #444349;
 }
 
-#site-icon a:hover, a:focus {
+#site-icon a:hover, 
+#site-icon a:focus {
   text-decoration: none;
   color: #8bddcd;
 }
 
 *:focus {
   outline: none !important;
+}
+
+.col-md-9 {
+  font-size: 1.1em;
+  padding-left: 20px;
+}
+
+.col-md-9 a:hover,
+.col-md-9 a {
+  color: #1C1C1C;
+}
+
+.line-separator{
+  height:1px;
+  border-bottom:1px solid #EEEEEE;
+}
+
+pre {
+  background-color: white;
+}
+
+.strong {
+  font-weight: bold;
 }

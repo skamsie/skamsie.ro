@@ -6,19 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-    <title>Navmenu Template for Bootstrap</title>
+    <title>skamsie.ro</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap addon CSS -->
     <link href="css/jasny-bootstrap.css" rel="stylesheet">
-    <link href="css/navmenu.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <link href="css/navmenu.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -26,31 +22,28 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
+  
   <body>
-    
+
     <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
-     <div id=site-icon class="visible-md visible-lg"><a href="#">skamsie.ro</a></div>
+      <div id=site-icon class="visible-md visible-lg"><a href="#">skamsie.ro</a></div>
+      
       <ul class="nav navmenu-tabs">
         <li class="active hideme"><a data-toggle="tab" href="#projects">projects</a></li>
         <li class="hideme"><a data-toggle="tab" href="#snippets">snippets & utils</a></li>
         <li class="hideme"><a data-toggle="tab" href="#about">about</a></li>
-        <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Stuff <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li><a data-toggle="tab" href="#dropdown1">Stuff1</a></li>
-                <li><a data-toggle="tab" href="#dropdown2">Stuff2</a></li>
-            </ul>
-        </li>
-
+        <li class="hideme"><a data-toggle="tab" href="#contact">contact</a></li>
+      </ul>
+      
       <div class="container">
-      <div class="row icons"> 
-      <div class="col-xs-3"><a href="http://github.com/skamsie/"><img src="images/github-icon.png"></a></div>
-      <div class="col-xs-3"><a href="http://skamsie.tumblr.com"><img src="images/tumblr-icon.png"></a></div>
-      <div class="col-xs-3"><a href="http://www.flickr.com/photos/skamsie/"><img src="images/flickr-icon.png"></a></div>
-      </div>
-    </div>
-    </div>
+        <div class="nav row icons"> 
+          <div class="col-xs-3"><a href="http://github.com/skamsie/"><img src="images/github-icon.png"></a></div>
+          <div class="col-xs-3"><a href="http://skamsie.tumblr.com"><img src="images/tumblr-icon.png"></a></div>
+          <div class="col-xs-3"><a href="http://www.flickr.com/photos/skamsie/"><img src="images/flickr-icon.png"></a></div>
+        </div>
+      </div> <!-- /.container -->
+    </div> <!-- /.navmenu .offcanvas-sm -->
+
     <div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
       <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
         <span class="icon-bar"></span>
@@ -58,67 +51,130 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#"><span id=site-title>skamsie.ro</span></a>
-    </div>
-
+    </div> <!-- /.navbar-fixed-top -->
 
     <div class="container">
       <div class="row">
         <div class="col-md-9">
-<!--  
+          
+          <div class="page-header">
+            <h1>skamsie.ro</h1>
+              <h4>arduino &bull; python &bull; utils</h4>
+          </div>
       
-      <div class="button">
-      <input type="button" id="lesen" value="Lesen!" />
-      </div>
+          <div class="tab-content">
+            
+            <div id="projects" class="tab-pane in active">
+              <h2>Projects</h2>
+              <p>Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+            </div> <!-- /#projects-->
+      
+            <div id="snippets" class="tab-pane"> 
+              <h2>Snippets & Utils</h2><br />
+              <ul class=lead>
+                <li><a href="#python-snippets">Python Snippets</a></li>
+                <li><a href="#">Placeholder</a></li>
+                <li><a href="#">Placeholder</a></li>
+                <li><a href="#">Placeholder</a></li>
+                <li><a href="#">Placeholder</a></li>
+              </ul>
+              <div class=line-separator></div>
+              <h3>Python code snippets</h3>
+              <p>A collection of python 2.7 code snippets useful for common tasks or even job interviews.</p><br />
+              
+              <p class=strong>String reverse</p>
+              
+<pre class="prettyprint">
+print 'hello world'[::-1] 
+# dlrow olleh
 
+print ''.join(reversed('hello world')) 
+# dlrow olleh
+</pre><br />
 
-    <div class="text">
-      Lorem Ipsum <br />
-    </div>
--->
+              <p class=strong>Match two lists to one object</p>
+
+<pre class="prettyprint">
+names =['Dave','Tom','Alex']
+scores =[9,10,7]
+a = zip(names, scores)
+b ={k:v for k,v in zip(names, scores)}
+c =dict(zip(names, scores))
+# a = [('Dave', 9), ('Tom', 10), ('Alex', 7)]
+# b = {'Dave': 9, 'Alex': 7, 'Tom': 10}
+# c = {'Dave': 9, 'Alex': 7, 'Tom': 10}
+</pre><br />
+              
+              <p class=strong>Bubble sorting</p>
+              <p>Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted. (from Wikipedia)</p>
+<pre class="prettyprint">
+my_list = [12, 5, 13, 8, 9, 65]
+
+def bubble_sort(unsorted_list):
+  length = len(unsorted_list) - 1
+  sorted = False
+ 
+  while not sorted:
+    sorted = True
+    for i in range(length):
+      if unsorted_list[i] > unsorted_list[i+1]:
+        sorted = False
+        unsorted_list[i], unsorted_list[i+1] = (unsorted_list[i+1],
+                                                unsorted_list[i])
+bubble_sort(my_list)
+print my_list
+#[5, 8, 9, 12, 13, 65]
+</pre><br />
+
+              <p class=strong>Count occurrences of every letter in a string</p>
+              
+<pre class="prettyprint">
+def count_letters(word):
+  letters = {}
+  for letter in word:
+    if letters.has_key(letter):
+      letters[letter] += 1
+    else:
+      letters[letter] = 1
+  return letters
     
-      <div class="page-header">
-        <h1>skamsie.ro</h1>
-        <h4>arduino &bull; python &bull; utils</h4>
-      </div>
+print count_letters('banana')
+# {'a': 3, 'b': 1, 'n': 2}
+</pre><br />
+              
+            </div><!-- /#snippets-->
       
-      <div class="tab-content">
-        <div id="projects" class="tab-pane in active">
-            <h3>Projects</h3>
-            <p>Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
-        </div>
+            <div id="about" class="tab-pane">
+              <h3>About</h3>
+              <p>I created this website in January 2015 as an exercise to improve my web 
+                development skills. Most of the content is about python, arduino and web development.<br /><br />
+                Some awesome frameworks and JavaScript plugins that helped me along the way:</p>
+                <ul>
+                  <li><a href="http://getbootstrap.com">Bootstrap</a> (html, css, JavaScript framework for responsive mobile friendly websites)</li>
+                  <li><a href="http://github.com/jasny/bootstrap">Jasny Bootstrap</a> (extension of Bootstrap adding various components)</li>
+                  <li><a href="http://sparkbox.github.io/mediaCheck/">Media Check</a> (allows you to control your JavaScript based on your media query definitions)</li>
+                <ul>
+                <br /><br />
+            </div><!-- /#about-->
       
-      <div id="snippets" class="tab-pane">
-            <h3>Snippets</h3>
-            <p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
-      </div><!-- /#snippets-->
-      
-      <div id="about" class="tab-pane">
-            <h3>About</h3>
-            <p>I created this website in January 2015 as an exercise to improve my web 
-              development skills. Most of the content is about python, arduino and web development.<br /><br />
-              Some awesome frameworks and JavaScript plugins that helped me along the way:</p>
-              <ul>
-                <li><a href="http://getbootstrap.com">Bootstrap</a> (html, css, JavaScript framework for responsive mobile friendly websites)</li>
-                <li><a href="http://github.com/jasny/bootstrap">Jasny Bootstrap</a> (extension of Bootstrap adding various components)</li>
-                <li><a href="http://sparkbox.github.io/mediaCheck/">Media Check</a> (allows you to control your JavaScript based on your media query definitions)</li>
-              <ul>
-              <br /><br />
-      </div><!-- /#about-->
+            <div id="contact" class="tab-pane">
+              <h3>Contact</h3>
+              <p>You can contact me at: <strong>alexandru.dimian[at]gmail.com</strong></p>
+                <br /><br />
+             </div><!-- /#contact-->
+          </div><!-- /.tab-content-->
         
-      </div><!-- /.tab-content-->
-    </div>
-    </div>
+        </div><!-- /.col-md-9-->
+      </div><!-- /.row -->
     </div><!-- /.container -->
-    
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.js"></script>
-    <script src="js/jasny-bootstrap.js"></script>
-    <script src="js/myscript.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/mediaCheck.js"></script>
+
+    <script src="js/jquery.js"></script> <!-- jquery -->
+    <script src="js/jasny-bootstrap.js"></script> <!-- bootstrap addon -->
+    <script src="js/skamsie-script.js"></script> <!-- custom script -->
+    <script src="js/bootstrap.js"></script> <!-- Bootstrap core JavaScript -->
+    <script src="js/mediaCheck.js"></script> <!-- jQuery plugin -->
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
   </body>
 </html>
-
