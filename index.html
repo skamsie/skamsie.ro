@@ -22,24 +22,24 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  
+
   <body>
 
     <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
-      <div id=site-icon class="visible-md visible-lg"><a href="#">skamsie.ro</a></div>
+      <div id=site-icon class="visible-md visible-lg"><a href="index.html">skamsie.ro</a></div>
       
       <ul class="nav navmenu-tabs">
-        <li class="active hideme"><a data-toggle="tab" href="#projects">projects</a></li>
-        <li class="hideme"><a data-toggle="tab" href="#snippets">snippets & utils</a></li>
-        <li class="hideme"><a data-toggle="tab" href="#about">about</a></li>
-        <li class="hideme"><a data-toggle="tab" href="#contact">contact</a></li>
+        <li class="hideme"><a href="index.html">projects</a></li>
+        <li class="hideme"><a href="snippets.html">snippets & utils</a></li>
+        <li class="hideme"><a href="about.html">about</a></li>
+        <li class="hideme"><a href="contact.html">contact</a></li>
       </ul>
       
       <div class="container">
         <div class="nav row icons"> 
-          <div class="col-xs-3"><a href="http://github.com/skamsie/"><img src="images/github-icon.png"></a></div>
-          <div class="col-xs-3"><a href="http://skamsie.tumblr.com"><img src="images/tumblr-icon.png"></a></div>
-          <div class="col-xs-3"><a href="http://www.flickr.com/photos/skamsie/"><img src="images/flickr-icon.png"></a></div>
+          <div class="col-sm-3"><a href="http://github.com/skamsie/"><img src="images/github-icon.png"></a></div>
+          <div class="col-sm-3"><a href="http://skamsie.tumblr.com"><img src="images/tumblr-icon.png"></a></div>
+          <div class="col-sm-3" id=my_img><a href="http://www.flickr.com/photos/skamsie/"><img src="images/flickr-icon.png"></a></div>
         </div>
       </div> <!-- /.container -->
     </div> <!-- /.navmenu .offcanvas-sm -->
@@ -56,118 +56,270 @@
     <div class="container">
       <div class="row">
         <div class="col-md-9">
-          
+
           <div class="page-header">
             <h1>skamsie.ro</h1>
               <h4>arduino &bull; python &bull; utils</h4>
           </div>
-      
-          <div class="tab-content">
+
+          <h2>Projects</h2><br />
+          <ul class=lead>
+            <li><a href="#arduino-device">Arduino temperature & humidity reader</a></li>
+            <li><a href="#">Placeholder</a></li>
+            <li><a href="#">Placeholder</a></li>
+            <li><a href="#">Placeholder</a></li>
+            <li><a href="#">Placeholder</a></li>
+          </ul>
+          <div class=line-separator></div>
+
+
+          <div id="arduino-device">
+            <h3>Arduino temperature and humidity reader</h3>
+            <p>Two years ago I was fiddling with Arduino creating small projects that eventually ended up
+               disassembled after a couple of days. The problem was, that after finishing a project, it did not
+               really have a big utility in real life situations because it was dependent on serial port for 
+               printing, it had lot of wires and components that could easily fall apart when moved, etc.
+            </p>
+            <p>So I bought a nice box for Arduino and an 1.8" display and built a small temperature and humidity
+               reader that I did not take apart since. You can find the code and schematics below:
+            </p><br />
+
+            <div class=site-images>
+            <img src="images/arduino-device.jpg" width=1024 height=680 alt="arduino device" class="img-responsive">
+            </div><br />
             
-            <div id="projects" class="tab-pane in active">
-              <h2>Projects</h2>
-              <p>Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
-            </div> <!-- /#projects-->
-      
-            <div id="snippets" class="tab-pane"> 
-              <h2>Snippets & Utils</h2><br />
-              <ul class=lead>
-                <li><a href="#python-snippets">Python Snippets</a></li>
-                <li><a href="#">Placeholder</a></li>
-                <li><a href="#">Placeholder</a></li>
-                <li><a href="#">Placeholder</a></li>
-                <li><a href="#">Placeholder</a></li>
-              </ul>
-              <div class=line-separator></div>
-              <h3>Python code snippets</h3>
-              <p>A collection of python 2.7 code snippets useful for common tasks or even job interviews.</p><br />
-              
-              <p class=strong>String reverse</p>
-              
-<pre class="prettyprint">
-print 'hello world'[::-1] 
-# dlrow olleh
-
-print ''.join(reversed('hello world')) 
-# dlrow olleh
-</pre><br />
-
-              <p class=strong>Match two lists to one object</p>
+            <h4>Parts list:</h4>
+            <ul>
+              <li>Arduino Uno</li>
+              <li>a temperature sensor (I used MaxDetect RHT03)</li>
+              <li>Arduino 1.8" TFT screen</li>
+              <li>2 mini breadboards</li>
+              <li>a lot of wires</li>
+              <li>10 kOhm potentiometer</li>
+              <li>9V Energizer battery (optional)</li>
+              <li>one 10k OHM resistor</li>
+              <li>silver knob</li>
+              <li>a case for the project (I used <a href=http://www.flikto.de/products/box-for-arduino>this one</a>)</li>
+            </ul><br /><br />
+            
+            <h4>Schematic (made with Fritzing)</h4><br />
+            <img src="images/arduino-fritzing.png" width=2000 height=1400 alt="arduino schema" class="img-responsive"><br />
+            
+            <h4>Code</h4>
+            <p>Save the file below as '.ino' and load it to your Arduino with the Arduino software.</br />
+              Dependencies:</p>
+            <code>Adafruit_GFX.h    // Core graphics library<br />
+              Adafruit_ST7735.h  // Hardware-specific library<br />
+              DHT.h // Sensor library
+            </code>
+            <br />
+            <br />
 
 <pre class="prettyprint">
-names =['Dave','Tom','Alex']
-scores =[9,10,7]
-a = zip(names, scores)
-b ={k:v for k,v in zip(names, scores)}
-c =dict(zip(names, scores))
-# a = [('Dave', 9), ('Tom', 10), ('Alex', 7)]
-# b = {'Dave': 9, 'Alex': 7, 'Tom': 10}
-# c = {'Dave': 9, 'Alex': 7, 'Tom': 10}
-</pre><br />
-              
-              <p class=strong>Bubble sorting</p>
-              <p>Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted. (from Wikipedia)</p>
-<pre class="prettyprint">
-my_list = [12, 5, 13, 8, 9, 65]
+//tft screen connections
+//+5V: +5V
+//MISO:	pin 12
+//SCK: pin 13
+//MOSI:	pin 11
+//LCD CS: pin 10
+//SD CS: pin 4
+//D/C: pin 9
+//RESET: pin 8
+//BL:	+5V
+//GND: GND
 
-def bubble_sort(unsorted_list):
-  length = len(unsorted_list) - 1
-  sorted = False
+#include <Time.h>  
+#include <Adafruit_GFX.h> // Core graphics library
+#include <Adafruit_ST7735.h> // Hardware-specific library
+#include <SPI.h>
+#include "DHT.h" // sensor lib
+
+//defining tft pins
+#define sclk 13
+#define mosi 11
+#define cs   10
+#define dc   9
+#define rst  8
+
+#define DHTPIN 3 // pin of the sensor
+#define DHTTYPE DHT22 // DHT 22  (AM2302)
+DHT dht(DHTPIN, DHTTYPE);
+
+#define TIME_MSG_LEN  11  // time sync to PC is HEADER followed by Unix time_t as ten ASCII digits
+#define TIME_HEADER  'T' // Header tag for serial time sync message
+#define TIME_REQUEST  7  // ASCII bell character requests a time sync message 
+
+Adafruit_ST7735 tft = Adafruit_ST7735(cs, dc, mosi, sclk, rst);
+
+void setup(void) {
+  Serial.begin(9600);
+  dht.begin();
+  tft.initR(INITR_REDTAB); // initialize a ST7735S chip, black tab
+  tft.fillScreen(ST7735_BLACK);
+  tft.setRotation(tft.getRotation()+1);
+  
+tftPrintTest(); //Initial introduction text, uncomment to view on screen
+
+tft.fillScreen(ST7735_BLACK); // Clear screen
  
-  while not sorted:
-    sorted = True
-    for i in range(length):
-      if unsorted_list[i] > unsorted_list[i+1]:
-        sorted = False
-        unsorted_list[i], unsorted_list[i+1] = (unsorted_list[i+1],
-                                                unsorted_list[i])
-bubble_sort(my_list)
-print my_list
-#[5, 8, 9, 12, 13, 65]
-</pre><br />
+// Printing static Items on display in the setup void in order to speed up the loop void
+  
+  tft.fillScreen(ST7735_BLACK);
+   //  clear screen
+  tft.setTextColor(ST7735_WHITE);
+  tft.setTextSize(1);
+  tft.setCursor(5,5);
+  tft.println("Humidity: (%)");
+  tft.setCursor(5,40);
+  tft.println("Temperature: (C)");
+  tft.drawLine(0, 76, tft.width()-1, 76, ST7735_WHITE); //draw line separator
+}
 
-              <p class=strong>Count occurrences of every letter in a string</p>
-              
-<pre class="prettyprint">
-def count_letters(word):
-  letters = {}
-  for letter in word:
-    if letters.has_key(letter):
-      letters[letter] += 1
-    else:
-      letters[letter] = 1
-  return letters
+void loop() {
+  
+  if(Serial.available() ) 
+  {
+    processSyncMessage();
+  }
+  if(timeStatus() == timeNotSet){
     
-print count_letters('banana')
-# {'a': 3, 'b': 1, 'n': 2}
-</pre><br />
-              
-            </div><!-- /#snippets-->
-      
-            <div id="about" class="tab-pane">
-              <h3>About</h3>
-              <p>I created this website in January 2015 as an exercise to improve my web 
-                development skills. Most of the content is about python, arduino and web development.<br /><br />
-                Some awesome frameworks and JavaScript plugins that helped me along the way:</p>
-                <ul>
-                  <li><a href="http://getbootstrap.com">Bootstrap</a> (html, css, JavaScript framework for responsive mobile friendly websites)</li>
-                  <li><a href="http://github.com/jasny/bootstrap">Jasny Bootstrap</a> (extension of Bootstrap adding various components)</li>
-                  <li><a href="http://sparkbox.github.io/mediaCheck/">Media Check</a> (allows you to control your JavaScript based on your media query definitions)</li>
-                <ul>
-                <br /><br />
-            </div><!-- /#about-->
-      
-            <div id="contact" class="tab-pane">
-              <h3>Contact</h3>
-              <p>You can contact me at: <strong>alexandru.dimian[at]gmail.com</strong></p>
-                <br /><br />
-             </div><!-- /#contact-->
-          </div><!-- /.tab-content-->
-        
-        </div><!-- /.col-md-9-->
+    tft.setTextSize(1);
+    tft.setTextColor(ST7735_WHITE);
+    Serial.println("waiting for sync message");
+    tft.setCursor(20, 82);
+    tft.println("sync");
+    tft.setCursor(20, 95);
+    tft.println("for time");
+    
+  }
+  else{
+  digitalClockDisplay();
+  }
+  float t = dht.readTemperature();
+  float h = dht.readHumidity();
+  
+  int color = setColor();
+  
+  tft.setTextSize(2);
+  tft.setTextColor(color, (0,0,0));
+  delay(80);
+  tft.setCursor(20,20);
+  tft.print(h,2);
+  tft.setCursor(20,55);
+  tft.setTextColor((100, 27, color), (0,0,0));
+  delay(80);
+  tft.print(t,2);
+  
+}
+
+void printDigitsm(int digits){
+  // utility function for digital clock display: prints preceding colon and leading 0 (to be used with minutes)
+  Serial.print(":");
+  tft.print(":");
+  if(digits < 10){
+    Serial.print('0');
+    tft.print('0');
+  }
+  Serial.print(digits);
+  tft.print(digits);
+}
+
+void printDigitsh(int digits){
+  // utility function for digital clock display: prints leading 0 (to be used with hours)
+  if(digits < 10){
+    Serial.print('0');
+    tft.print('0');
+  }
+  Serial.print(digits);
+  tft.print(digits);
+}
+
+void processSyncMessage() {
+  // if time sync available from serial port, update time and return true
+  while(Serial.available() >=  TIME_MSG_LEN ){  // time message consists of header & 10 ASCII digits
+    char c = Serial.read() ; 
+    Serial.print(c);  
+    if( c == TIME_HEADER ) {       
+      time_t pctime = 0;
+      for(int i=0; i < TIME_MSG_LEN -1; i++){   
+        c = Serial.read();          
+        if( c >= '0' && c <= '9'){   
+          pctime = (10 * pctime) + (c - '0') ; // convert digits to a number    
+        }
+      }   
+      setTime(pctime);   // Sync Arduino clock to the time received on the serial port
+    }  
+  }
+}
+
+void digitalClockDisplay(){
+  // digital clock display of the time
+  
+  tft.setCursor(20, 82);
+  tft.setTextSize(1);
+  tft.setTextColor(ST7735_WHITE, ST7735_BLACK);
+  tft.print(day());
+  tft.print(".");
+  tft.print(month());
+  tft.print(".");
+  tft.print(year());
+  tft.setTextSize(2);
+  tft.setCursor(20, 95);
+  printDigitsh(hour());
+  printDigitsm(minute());
+  Serial.print(" ");
+  Serial.print(day());
+  Serial.print(" ");
+  Serial.print(month());
+  Serial.print(" ");
+  Serial.print(year()); 
+  Serial.println(); 
+}
+
+void tftPrintTest() {
+  tft.fillScreen(ST7735_BLACK);
+  tft.setCursor(2, 10);
+  tft.setTextColor(ST7735_YELLOW);
+  tft.setTextSize(2);
+  tft.println("This device");
+  tft.setCursor(2, 33);
+  tft.println("will make");
+  tft.setCursor(2, 56);
+  tft.println("your life");
+  tft.setCursor(2, 79);
+  tft.println("complete");
+  delay(2200);
+  }
+
+ int setColor() {
+  
+  int reading = analogRead(A0);
+  int color;
+  if (reading >= 0 && reading < 200){
+    color = ST7735_YELLOW;
+  }
+  else if (reading >= 200 && reading < 400){
+    color = ST7735_RED;
+  }
+  else if (reading >= 400 && reading < 600){
+    color = ST7735_BLUE;
+  }
+  else if (reading >= 600 && reading < 800){
+    color = ST7735_GREEN;
+  }  
+  else{color = ST7735_CYAN;
+}  
+  return color;
+}    
+</pre>
+
+<p>For more info about this project, check out the <a href='https://github.com/skamsie/Arduino-Hygrometer-Thermometer'>Github</a> page.<br /><br />
+
+          </div><!-- /#arduino-device -->
+
+        </div> <!-- /.col-md-9 -->
       </div><!-- /.row -->
     </div><!-- /.container -->
-
 
     <script src="js/jquery.js"></script> <!-- jquery -->
     <script src="js/jasny-bootstrap.js"></script> <!-- bootstrap addon -->

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Snippets & Utils</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap addon CSS -->
+    <link href="css/jasny-bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/navmenu.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  
+  <body>
+
+    <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
+      <div id=site-icon class="visible-md visible-lg"><a href="#">skamsie.ro</a></div>
+      
+      <ul class="nav navmenu-tabs">
+        <li class="hideme"><a href="index.html">projects</a></li>
+        <li class="hideme"><a href="snippets.html">snippets & utils</a></li>
+        <li class="hideme"><a href="about.html">about</a></li>
+        <li class="hideme"><a href="contact.html">contact</a></li>
+      </ul>
+      
+      <div class="container">
+        <div class="nav row icons"> 
+          <div class="col-sm-3"><a href="http://github.com/skamsie/"><img src="images/github-icon.png"></a></div>
+          <div class="col-sm-3"><a href="http://skamsie.tumblr.com"><img src="images/tumblr-icon.png"></a></div>
+          <div class="col-sm-3"><a href="http://www.flickr.com/photos/skamsie/"><img src="images/flickr-icon.png"></a></div>
+        </div>
+      </div> <!-- /.container -->
+    </div> <!-- /.navmenu .offcanvas-sm -->
+
+    <div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
+      <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><span id=site-title>skamsie.ro</span></a>
+    </div> <!-- /.navbar-fixed-top -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          
+          <div class="page-header">
+            <h1>skamsie.ro</h1>
+              <h4>arduino &bull; python &bull; utils</h4>
+          </div>
+          
+          <h2>Snippets & Utils</h2><br />
+          <ul class=lead>
+            <li><a href="#python-snippets">Python Snippets</a></li>
+            <li><a href="#">Placeholder</a></li>
+            <li><a href="#">Placeholder</a></li>
+            <li><a href="#">Placeholder</a></li>
+            <li><a href="#">Placeholder</a></li>
+          </ul>
+          <div class=line-separator></div>
+          
+          <div id=python-snippets>
+            <h3>Python code snippets</h3>
+            <p>A collection of python 2.7 code snippets useful for common tasks or even job interviews.</p><br />  
+            
+            <h4>String reverse</h4>
+<pre class="prettyprint">
+ print 'hello world'[::-1] 
+ # dlrow olleh
+
+ print ''.join(reversed('hello world')) 
+ # dlrow olleh
+</pre><br />
+
+            <h4>Match two lists to one object</h4>
+<pre class="prettyprint">
+ names =['Dave','Tom','Alex']
+ scores =[9,10,7]
+ a = zip(names, scores)
+ b ={k:v for k,v in zip(names, scores)}
+ c =dict(zip(names, scores))
+ # a = [('Dave', 9), ('Tom', 10), ('Alex', 7)]
+ # b = {'Dave': 9, 'Alex': 7, 'Tom': 10}
+ # c = {'Dave': 9, 'Alex': 7, 'Tom': 10}
+</pre><br />
+              
+            <h4>Bubble sorting</h4>
+            <p>Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted. (from Wikipedia)</p>
+<pre class="prettyprint">
+ my_list = [12, 5, 13, 8, 9, 65]
+
+ def bubble_sort(unsorted_list):
+   length = len(unsorted_list) - 1
+   sorted = False
+ 
+   while not sorted:
+     sorted = True
+     for i in range(length):
+       if unsorted_list[i] > unsorted_list[i+1]:
+         sorted = False
+         unsorted_list[i], unsorted_list[i+1] = (unsorted_list[i+1],
+                                                unsorted_list[i])
+ bubble_sort(my_list)
+ print my_list
+ #[5, 8, 9, 12, 13, 65]
+</pre><br />
+
+            <h4>Count occurrences of every letter in a string</h4>
+<pre class="prettyprint">
+ def count_letters(word):
+   letters = {}
+   for letter in word:
+     if letters.has_key(letter):
+       letters[letter] += 1
+     else:
+       letters[letter] = 1
+   return letters
+    
+ print count_letters('banana')
+ # {'a': 3, 'b': 1, 'n': 2}
+</pre><br />
+
+            <h4>Return indexes of first letter of substring in a string</h4>
+<pre class="prettyprint">
+ def get_substring_index(a_string, substring):
+   return [i for i in range(len(a_string)) if a_string.startswith(substring, i)]
+
+ print get_substring_index("this is my black cat camy", 'ca')
+ # [17, 21]
+
+ print get_substring_index("this is my black cat camy", 'my')
+ #[8, 23]
+</pre><br />
+
+<p class=strong>General purpose decorator for displaying process duration</p>
+<pre class="prettyprint">
+ import datetime
+ import time
+
+ def decorator(function):
+   def wrapper(*args, **kwargs):
+     p_start = datetime.datetime.now()
+     function(*args, **kwargs)
+     p_end = datetime.datetime.now()
+     print 'Process started at: %s' %p_start
+     print 'Process finished at: %s' %p_end
+     print 'Lasted: %s' %(p_end - p_start)
+   return wrapper
+
+ @decorator
+ def print_numbers(a):
+   for i in range(0, a):
+     time.sleep(1)
+     print i
+
+ print_numbers(5)
+
+ #0
+ #1
+ #2
+ #3
+ #4
+ #Process started at: 2015-01-28 11:13:39.797402
+ #Process finished at: 2015-01-28 11:13:44.814049
+ #Lasted: 0:00:05.016647
+</pre><br />
+
+          </div> <!-- /#python-snippets -->
+        </div> <!-- /.col-md-9 -->
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+
+    <script src="js/jquery.js"></script> <!-- jquery -->
+    <script src="js/jasny-bootstrap.js"></script> <!-- bootstrap addon -->
+    <script src="js/skamsie-script.js"></script> <!-- custom script -->
+    <script src="js/bootstrap.js"></script> <!-- Bootstrap core JavaScript -->
+    <script src="js/mediaCheck.js"></script> <!-- jQuery plugin -->
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+  </body>
+</html>
