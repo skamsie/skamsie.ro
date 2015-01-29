@@ -27,7 +27,6 @@ body {
 
 .container {
   max-width: 100%;
-  float: left;
 }
 
 @media (min-width: 1px) {
@@ -50,9 +49,14 @@ body {
     padding-left: 30px;
   }
   
-  .col-md-9 {
-    font-size: 1.1em;
+  .col-lg-10 {
     padding-left: 40px;
+    padding-right: 40px;
+    font-size: 16px;
+  }
+  
+  .container {
+    float: left;
   }
 }
 
@@ -66,11 +70,9 @@ body {
    border-color: transparent;
   }
   
-  .col-md-9 {
-    font-size: 1.2em;
-    padding-left: 10px;
+  .col-lg-10 {
+    font-size: 16px;
   }
-  
 }
 
 
@@ -137,8 +139,7 @@ body {
   color: #444349;
 }
 
-#site-icon a:hover, 
-#site-icon a:focus {
+#site-icon a:hover {
   text-decoration: none;
   color: black;
 }
@@ -147,8 +148,8 @@ body {
   outline: none !important;
 }
 
-.col-md-9 a:hover,
-.col-md-9 a {
+.col-lg-10 a:hover,
+.col-lg-10 a {
   color: #18BC9C;
 }
 
@@ -158,10 +159,16 @@ body {
 }
 
 pre {
-  background-color: white;
+  background-color: #F9F9F9;
   border: 1px solid #CCCCCC !important;
 	max-height: 30em;
 	overflow: auto;
+	font-family: Consolas, Menlo, Monaco, Lucida Console;
+	font-size: 14px;
+}
+
+code {
+  color: #444349;
 }
 
 .strong {
@@ -172,3 +179,28 @@ pre {
   border: 1px solid transparent;
   border-radius: 5px;
 }
+
+.navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+  background-image: url('../images/stardust.png');
+}
+
+.navbar-default .navbar-brand {
+  color: #e7e7e7;
+}
+
+.navbar-default .navbar-brand:hover, {
+  color: #18BC9C;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #18BC9C;
+}
+
+.div-separator {
+  height: 30px;
+  background-color: transparent;
+}
+
+
