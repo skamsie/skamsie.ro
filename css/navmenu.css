@@ -165,6 +165,7 @@ pre {
 	overflow: auto;
 	font-family: Consolas, Menlo, Monaco, Lucida Console;
 	font-size: 14px;
+	padding-left: 10px !important;
 }
 
 code {
@@ -202,5 +203,3 @@ code {
   height: 30px;
   background-color: transparent;
 }
-
-

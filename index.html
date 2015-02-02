@@ -66,13 +66,9 @@
           <h2>Projects</h2><br />
           <ul class=lead>
             <li><a href="#arduino-device">Arduino temperature & humidity reader</a></li>
-            <li><a href="#">Placeholder</a></li>
-            <li><a href="#">Placeholder</a></li>
-            <li><a href="#">Placeholder</a></li>
-            <li><a href="#">Placeholder</a></li>
+            <li><a href="#python-translator">Python de-en / en-de translation game</a></li>
           </ul>
           <div class=line-separator></div>
-
 
           <div id="arduino-device">
             <h3>Arduino temperature and humidity reader</h3>
@@ -129,10 +125,10 @@
 //BL:	+5V
 //GND: GND
 
-#include <Time.h>  
-#include <Adafruit_GFX.h> // Core graphics library
-#include <Adafruit_ST7735.h> // Hardware-specific library
-#include <SPI.h>
+#include &lt;Time.h&gt;  
+#include &lt;Adafruit_GFX.h&gt; // Core graphics library
+#include &lt;Adafruit_ST7735.h&gt; // Hardware-specific library
+#include &lt;SPI.h&gt;
 #include "DHT.h" // sensor lib
 
 //defining tft pins
@@ -159,7 +155,7 @@ void setup(void) {
   tft.fillScreen(ST7735_BLACK);
   tft.setRotation(tft.getRotation()+1);
   
-tftPrintTest(); //Initial introduction text, uncomment to view on screen
+tftPrintTest(); //Initial introduction text
 
 tft.fillScreen(ST7735_BLACK); // Clear screen
  
@@ -311,12 +307,98 @@ void tftPrintTest() {
   else{color = ST7735_CYAN;
 }  
   return color;
-}    
+} 
 </pre>
 
-<p>For more info about this project, check out the <a href='https://github.com/skamsie/Arduino-Hygrometer-Thermometer'>Github</a> page.<br /><br />
+            <p>For more info about this project, check out the <a href='https://github.com/skamsie/Arduino-Hygrometer-Thermometer'>Github</a> page.</p>
 
           </div><!-- /#arduino-device -->
+
+          <div class=div-separator></div>
+          <div class=line-separator></div>
+
+          <div id="python-translator">
+            <h3>Python de-en / en-de translation game</h3>
+            <p>This is a translation game for the command line that runs on python 2.7.<br />
+              I wrote it while I was learning German to help me memorize new words, but of course it can
+              be adapted for any languages or in fact any type of trivia game by changing the contents of
+              the dictionary file.<br />
+              It works by randomly printing a key or a value to the standard output and the user has to guess its
+              correspondent (value or key, depending on the game option).
+            </p>
+              
+              <h4>Gameplay</h4>
+              <p>Navigate to the translator game folder and run the <code>translator.py</code> file.
+                You will have to select the gameplay mode 'en-de' or 'de-en' and the number of rounds (1 - 30).
+                Score 3 points if you get it right first try and 1 point for second try (a hint is displayed). Example:
+              </p><br />
+              
+<pre>
+##################################
+1.  Select game type EN-DE or DE-EN
+2.  Choose number of rounds between 1 and 30
+3.  Type the translation
+4.  Score 3 if you get it right first try, 1 for second try
+*   English verbs start with 'to '
+**  Each key has one value only
+*** Type 'exit()' at any time to abort
+##################################
+
+Play EN-DE ('en') or DE-EN ('de')? 
+de
+Number of rounds: 
+3
+Starting...
+
+Übung
+exercise
+
+OK
+
+Saft
+juice
+
+OK
+
+Kleber
+glue
+
+OK
+
+Statistics:
+##################################
+NEW HIGH SCORE!!! 9 / 0:00:11.25
+Game type: DE_EN
+Rounds:  3
+Score: 9
+Duration: 0:00:11.25
+Max. possible score for 3 rounds: 9
+Current High Score: 9 / 0:00:11.25
+##################################
+</pre>
+              
+              <h4>Highscore</h4>
+              <p>The translator game also uses a high-score system. A file will be
+                created after the first play in the game directory. From then on it will
+                store the best score and time for each type of game and number of rounds.
+                Deleting the <code>high_scores.cfg</code> file resets the statistics.
+              </p>
+              
+              <h4>Adding more words</h4>
+              <p>For adding more entries update the <code>translator_game/dictionary.txt</code> file 
+                using the pattern 'en_word: de_word'. After that you can run the script with various options
+                to sort the dictionary or print its contents. For example:<br />
+                <code>--print_dict</code> prints the contents of the dictionary file sorted by english words<br />
+                <code>--sort_dict</code> sorts the dictionary file in place (the file will be overwritten!).<br />
+              </p>
+              
+              <h4>Code</h4>
+              <p>You can download the script and the example dictionary file from my <a href="https://github.com/skamsie/Python-Translator-Game">Github page</a>.</p>
+
+          </div><!-- /#python-translator -->
+          
+          <div class=div-separator></div>
+          <div class=line-separator></div>
 
         </div> <!-- /.col-md-9 -->
       </div><!-- /.row -->
@@ -327,7 +409,7 @@ void tftPrintTest() {
     <script src="js/skamsie-script.js"></script> <!-- custom script -->
     <script src="js/bootstrap.js"></script> <!-- Bootstrap core JavaScript -->
     <script src="js/mediaCheck.js"></script> <!-- jQuery plugin -->
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
 
   </body>
 </html>
