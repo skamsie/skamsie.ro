@@ -1,2 +1,2 @@
 # skamsie.ro
-source of skamsie.ro
+source of www.skamsie.ro
