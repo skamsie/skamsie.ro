@@ -161,7 +161,7 @@ body {
 pre {
   background-color: #F9F9F9;
   border: 1px solid #CCCCCC !important;
-	max-height: 30em;
+	max-height: 40em;
 	overflow: auto;
 	font-family: Consolas, Menlo, Monaco, Lucida Console;
 	font-size: 14px;
@@ -203,3 +203,22 @@ code {
   height: 30px;
   background-color: transparent;
 }
+
+/* Projects - Domain Status Info table style */
+
+#myTable th,
+#myTable td {
+  padding: 6px;
+  background-color: #F9F9F9;
+  max-width: 500px;
+  overflow: scroll;
+}
+
+#myTable th:hover {
+  background-color: #40E0D0;
+}
+
+#myTable th {
+  background-color: #7FFFD4;
+}
+

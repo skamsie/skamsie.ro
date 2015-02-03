@@ -67,7 +67,9 @@
           <ul class=lead>
             <li><a href="#arduino-device">Arduino temperature & humidity reader</a></li>
             <li><a href="#python-translator">Python de-en / en-de translation game</a></li>
+            <li><a href="#domain-status">Domain Status Info</a></li>
           </ul>
+          <div class=div-separator></div>
           <div class=line-separator></div>
 
           <div id="arduino-device">
@@ -316,22 +318,23 @@ void tftPrintTest() {
 
           <div class=div-separator></div>
           <div class=line-separator></div>
+          <div class=div-separator></div>
 
           <div id="python-translator">
             <h3>Python de-en / en-de translation game</h3>
-            <p>This is a translation game for the command line that runs on python 2.7.<br />
-              I wrote it while I was learning German to help me memorize new words, but of course it can
+            <p><a href="https://github.com/skamsie/Python-Translator-Game">Here</a> is a translation game for the command line that runs on python 2.7.<br />
+              I wrote it while I was learning German to help me memorize new words, but it can
               be adapted for any languages or in fact any type of trivia game by changing the contents of
               the dictionary file.<br />
               It works by randomly printing a key or a value to the standard output and the user has to guess its
               correspondent (value or key, depending on the game option).
-            </p>
+            </p><br />
               
-              <h4>Gameplay</h4>
-              <p>Navigate to the translator game folder and run the <code>translator.py</code> file.
-                You will have to select the gameplay mode 'en-de' or 'de-en' and the number of rounds (1 - 30).
-                Score 3 points if you get it right first try and 1 point for second try (a hint is displayed). Example:
-              </p><br />
+            <h4>Gameplay</h4>
+            <p>Navigate to the translator game folder and run the <code>translator.py</code> file.
+              You will have to select the gameplay mode 'en-de' or 'de-en' and the number of rounds (1 - 30).
+              Score 3 points if you get it right first try and 1 point for second try (a hint is displayed). Example:
+            </p><br />
               
 <pre>
 ##################################
@@ -375,30 +378,130 @@ Duration: 0:00:11.25
 Max. possible score for 3 rounds: 9
 Current High Score: 9 / 0:00:11.25
 ##################################
-</pre>
+</pre><br />
               
-              <h4>Highscore</h4>
-              <p>The translator game also uses a high-score system. A file will be
-                created after the first play in the game directory. From then on it will
-                store the best score and time for each type of game and number of rounds.
-                Deleting the <code>high_scores.cfg</code> file resets the statistics.
-              </p>
+            <h4>Highscore</h4>
+            <p>The translator game also uses a high-score system. A file will be
+              created after the first play in the game directory. From then on it will
+              store the best score and time for each type of game and number of rounds.
+              Deleting the <code>high_scores.cfg</code> file resets the statistics.
+            </p><br />
               
-              <h4>Adding more words</h4>
-              <p>For adding more entries update the <code>translator_game/dictionary.txt</code> file 
-                using the pattern 'en_word: de_word'. After that you can run the script with various options
-                to sort the dictionary or print its contents. For example:<br />
-                <code>--print_dict</code> prints the contents of the dictionary file sorted by english words<br />
-                <code>--sort_dict</code> sorts the dictionary file in place (the file will be overwritten!).<br />
-              </p>
+            <h4>Adding more words</h4>
+            <p>For adding more entries update the <code>translator_game/dictionary.txt</code> file 
+              using the pattern 'en_word: de_word'. After that you can run the script with various options
+              to sort the dictionary or print its contents. For example:<br />
+              <code>--print_dict</code> prints the contents of the dictionary file sorted by english words<br />
+              <code>--sort_dict</code> sorts the dictionary file in place (the file will be overwritten!).<br />
+            </p><br />
               
-              <h4>Code</h4>
-              <p>You can download the script and the example dictionary file from my <a href="https://github.com/skamsie/Python-Translator-Game">Github page</a>.</p>
+            <h4>Code</h4>
+            <p>You can download the script and the example dictionary file from my <a href="https://github.com/skamsie/Python-Translator-Game">Github page</a>.</p>
 
           </div><!-- /#python-translator -->
           
           <div class=div-separator></div>
           <div class=line-separator></div>
+          <div class=div-separator></div>
+          
+          <div id="domain-status">
+            <h3>Domain Status Info</h3>
+            <p>The <code>domain_status_info.py</code> script verifies the status of domain names based on a provided file or command line input.
+              Additionally it gets the Domain Name Registrar and referral URL. The results are stored in an automatically generated html
+              file or printed to stdout depending on the options used. You can download the project from <a href="https://github.com/skamsie/Domain-Status-Checker">here</a>.
+            </p><br />
+              
+            <h4>Usage</h4>
+            <p>Download the whole project to your computer.<br />
+              Run the <code>domain_status_info.py</code> script with one or more of the following options:
+              <ul>
+                <li><code>--file, -f</code> to use a separate file with domain names (one per line). Note that this option is mutually exclusive with <code>--display</code></li>
+                <li><code>--display, -d</code> to input the domain names directly in the command line as argument (for multiple domains, they must be separated by a white space)</li>
+                <li><code>--registrar, -r</code> also checks the domain name registrar value</li>
+                <li><code>--length, -l</code> the line where file parsing should start and where it should stop</li><br />
+              </ul>
+            Examples:</p>
+
+<pre>
+#feeding from file and saving to html:
+
+python domain_status_info.py -f domains.txt
+python domain_status_info.py -f domains.txt --registrar # also adds the registrar column
+python domain_status_info.py -f domains.txt --length 2 10 # parses file from lines 2 to 10
+
+#print to stdout:
+
+python domain_status_info.py -d skamsie.ro -r
+** skamsie.ro ** 85.9.53.130 ** 200 -- OK ** ['EuroDomenii', 'http://www.domenii.eu']
+</pre><br />
+              
+            <h4>Status Codes</h4>
+            <p>The script uses the standard python library <code>httplib</code>. The status codes returned are similar with the ones return by the <code>curl -I</code> command on *nix systems.
+            </p><br />
+              
+            <h4>HTML file</h4>
+            <p>The html file generated to populate the results will use the the same core name as the one used as argument + 'STATUS' + interval of lines parsed. 
+            It will be saved in a folder called 'generated_results' created where the script is located. It contains a table like the one below (click on headers to sort):
+            </p><br />
+
+						<table id="myTable">
+						<thead>
+							<tr>
+								<th>Nr.</th>
+								<th>Domain Name</th>
+								<th>IP Address</th>
+								<th>Status</th>
+								<th>Registrar</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td><a href="http://www.example.com">www.example.com</a></td>
+								<td>93.184.216.34</td>
+								<td>200 -- OK</td>
+								<td>N/A &bullet; N/A</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td><a href="http://www.example.org">www.example.org</a></td>
+								<td>93.184.216.34</td>
+								<td>200 -- OK</td>
+								<td>Internet Assigned Numbers Authority (IANA) (R193-LROR) &bullet; Domain Status: serverDeleteProhibited</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td><a href="http://www.skamsie.ro">www.skamsie.ro</a></td>
+								<td>85.9.53.130</td>
+								<td>200 -- OK</td>
+								<td>EuroDomenii &bullet; http://www.domenii.eu</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td><a href="http://www.project10249.tk">www.project10249.tk</a></td>
+								<td>79.170.43.200</td>
+								<td>200 -- OK</td>
+								<td>N/A &bullet; N/A</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td><a href="http://www.nob.ro">www.nob.ro</a></td>
+								<td>85.9.53.130</td>
+								<td>200 -- OK</td>
+								<td>Netim &bullet; http://www.netim.com</td>
+							</tr>
+						</tbody>
+						</table>
+						<br /><br />
+						
+						<p>NOTE: The script uses the pywhois library for getting domain name registrar and referral url. 
+						The needed files are included. More about pywhois on: <a href='https://code.google.com/p/pywhois'>https://code.google.com/p/pywhois</a></p>
+
+          </div><!-- /#domain-status -->
+          
+          <div class=div-separator></div>
+          <div class=line-separator></div>
+          <div class=div-separator></div>
 
         </div> <!-- /.col-md-9 -->
       </div><!-- /.row -->
@@ -409,6 +512,8 @@ Current High Score: 9 / 0:00:11.25
     <script src="js/skamsie-script.js"></script> <!-- custom script -->
     <script src="js/bootstrap.js"></script> <!-- Bootstrap core JavaScript -->
     <script src="js/mediaCheck.js"></script> <!-- jQuery plugin -->
+    <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="js/sortit.js"></script>
 
 
   </body>
