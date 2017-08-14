@@ -1,0 +1,224 @@
+html, body {
+  height: 100%;
+}
+body {
+  padding: 50px 0 0 0;
+}
+
+.navmenu {
+  padding-top: 50px;
+  padding-bottom: 10px;
+  background-image: url('../images/stardust.png');
+}
+
+.navbar {
+  display: block;
+  text-align: center;
+}
+.navbar-brand {
+  display: inline-block;
+  float: none;
+}
+.navbar-toggle {
+  position: absolute;
+  float: left;
+  margin-left: 15px;
+}
+
+.container {
+  max-width: 100%;
+}
+
+@media (min-width: 1px) {
+  .navbar-toggle {
+    display: block !important;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    padding: 0 0 0 340px;
+  }
+  .navmenu {
+    padding-top: 0;
+  }
+  .navbar {
+    display: none !important; /* IE8 fix */
+  }
+  .navmenu .nav{
+    padding-left: 30px;
+  }
+  
+  .col-lg-10 {
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 16px;
+  }
+  
+  .container {
+    float: left;
+  }
+}
+
+@media (max-width: 991px) {
+  .navmenu,
+  .navbar-offcanvas {
+    width: 40%;
+    height: 80%;
+    -moz-border-radius-bottomright: 10px;
+   border-bottom-right-radius: 10px;
+   border-color: transparent;
+  }
+  
+  .col-lg-10 {
+    font-size: 16px;
+  }
+}
+
+
+.page-header {
+  margin-bottom: 40px;
+  font-family: monospace !important;
+}
+
+/***Bootstrap custom style***/
+
+.navmenu-tabs > li > a:hover,
+.navmenu-tabs > li > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.nav > li > a:hover {
+  color: #18BC9C;
+}
+
+.nav > li > a {
+  font-size: 1.5em;
+  color: white;
+}
+
+.navmenu-tabs > li > a:focus {
+  color:#18BC9C;
+  outline: none !important;
+}
+
+
+.icons img {
+  width: 55px;
+  width: 55px;
+  border-radius:30%;
+  margin-top: 4px;
+}
+
+.icons {
+  padding-top: 20px;
+  padding-right: 2px;
+}
+
+.icons img:hover {
+  background-color: #18BC9C;
+}
+
+#site-icon {
+  background-color: #D1A319;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 150px; 
+  font-family: monospace;
+  font-size: 1.4em;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+#site-icon a{
+  color: #444349;
+}
+
+#site-icon a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+.col-lg-10 a:hover,
+.col-lg-10 a {
+  color: #18BC9C;
+}
+
+.line-separator{
+  height:1px;
+  border-bottom:1px solid #CCCCCC;
+}
+
+pre {
+  background-color: #F9F9F9;
+  border: 1px solid #CCCCCC !important;
+	max-height: 40em;
+	overflow: auto;
+	font-family: Consolas, Menlo, Monaco, Lucida Console;
+	font-size: 14px;
+	padding-left: 10px !important;
+}
+
+code {
+  color: #444349;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.site-images img {
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+  background-image: url('../images/stardust.png');
+}
+
+.navbar-default .navbar-brand {
+  color: #e7e7e7;
+}
+
+.navbar-default .navbar-brand:hover, {
+  color: #18BC9C;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #18BC9C;
+}
+
+.div-separator {
+  height: 30px;
+  background-color: transparent;
+}
+
+/* Projects - Domain Status Info table style */
+
+#myTable th,
+#myTable td {
+  padding: 6px;
+  background-color: #F9F9F9;
+  max-width: 500px;
+  overflow: scroll;
+}
+
+#myTable th:hover {
+  background-color: #B2B2B2;
+}
+
+#myTable th {
+  background-color: #D2D2D2;
+}
+
